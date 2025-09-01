@@ -3,6 +3,13 @@ const inputEl = document.getElementById("input-el");
 const inputBtn = document.getElementById("input-btn");
 const ulEl = document.getElementById("ul-el");
 
+let readsFromLocalStorage = JSON.parse(localStorage.getItem("myReads"));
+
+if (readsFromLocalStorage) {
+  myReads = readsFromLocalStorage;
+  renderLeads();
+}
+
 inputBtn.addEventListener("click", function () {
   myReads.push(inputEl.value);
   inputEl.value = "";
