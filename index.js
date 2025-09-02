@@ -1,10 +1,11 @@
 let myReads = [];
 const inputEl = document.getElementById("input-el");
 const inputBtn = document.getElementById("input-btn");
+const tabBtn = document.getElementById("tab-btn");
 const deleteBtn = document.getElementById("delete-btn");
 const ulEl = document.getElementById("ul-el");
 
-let readsFromLocalStorage = JSON.parse(localStorage.getItem("myReads"));
+const readsFromLocalStorage = JSON.parse(localStorage.getItem("myReads"));
 
 if (readsFromLocalStorage) {
   console.log(readsFromLocalStorage);
@@ -18,6 +19,14 @@ inputBtn.addEventListener("click", function () {
   inputEl.value = "";
   localStorage.setItem("myReads", JSON.stringify(myReads));
   renderLeads();
+});
+
+tabBtn.addEventListener("click", function () {
+  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    myReads.push(tabs[0].url);
+    localStorage.setItem("myReads", JSON.stringify(myReads));
+    renderLeads();
+  });
 });
 
 deleteBtn.addEventListener("dblclick", function () {
