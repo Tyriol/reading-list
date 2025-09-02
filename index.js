@@ -23,7 +23,7 @@ inputBtn.addEventListener("click", function () {
 
 tabBtn.addEventListener("click", function () {
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-    myReads.push(tabs[0].url);
+    myReads.push({ title: tabs[0].title, url: tabs[0].url });
     localStorage.setItem("myReads", JSON.stringify(myReads));
     renderLeads();
   });
@@ -40,8 +40,8 @@ function renderLeads() {
   for (let i = 0; i < myReads.length; i++) {
     listItems += `
             <li>
-                <a target='_blank' href='${myReads[i]}'>
-                    ${myReads[i]}
+                <a target='_blank' href='${myReads[i].url}'>
+                    ${myReads[i].title}
                 </a>
             </li>
         `;
