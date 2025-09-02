@@ -13,14 +13,6 @@ if (readsFromLocalStorage) {
   renderLeads();
 }
 
-inputBtn.addEventListener("click", function () {
-  console.log("clicked");
-  myReads.push(inputEl.value);
-  inputEl.value = "";
-  localStorage.setItem("myReads", JSON.stringify(myReads));
-  renderLeads();
-});
-
 tabBtn.addEventListener("click", function () {
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     myReads.push({ title: tabs[0].title, url: tabs[0].url });
