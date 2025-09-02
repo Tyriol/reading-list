@@ -1,5 +1,6 @@
 :root {
-  --primary-colour: #5f9341;
+  --primary-colour: #ff6f61;
+  --secondary-colour: #fdf2f0;
 }
 
 body {
@@ -7,6 +8,7 @@ body {
   padding: 10px;
   font-family: Arial, Helvetica, sans-serif;
   min-width: 400px;
+  background-color: var(--secondary-colour);
 }
 
 h1 {
@@ -27,14 +29,14 @@ input {
 
 button {
   background: var(--primary-colour);
-  color: white;
+  color: var(--secondary-colour);
   padding: 10px 20px;
   font-weight: bold;
   border: 1px solid var(--primary-colour);
 }
 
 #delete-btn {
-  background-color: white;
+  background-color: var(--secondary-colour);
   color: var(--primary-colour);
 }
 
