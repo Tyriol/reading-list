@@ -1,3 +1,7 @@
+:root {
+  --primary-colour: #5f9341;
+}
+
 body {
   margin: 0;
   padding: 10px;
@@ -5,25 +9,33 @@ body {
   min-width: 400px;
 }
 
+h1 {
+  margin: 0;
+  padding: 10px 0;
+  text-align: center;
+  font-weight: 600;
+  color: var(--primary-colour);
+}
+
 input {
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
-  border: 1px solid #5f9341;
+  border: 1px solid var(--primary-colour);
   margin-bottom: 4px;
 }
 
 button {
-  background: #5f9341;
+  background: var(--primary-colour);
   color: white;
   padding: 10px 20px;
   font-weight: bold;
-  border: 1px solid #5f9341;
+  border: 1px solid var(--primary-colour);
 }
 
 #delete-btn {
   background-color: white;
-  color: #5f9341;
+  color: var(--primary-colour);
 }
 
 ul {
@@ -37,5 +49,5 @@ li {
 }
 
 a {
-  color: #5f9341;
+  color: var(--primary-colour);
 }
